@@ -1,8 +1,16 @@
+import AllMeetupsPage from './pages/AllMeetupsPage';
+import FavoritesPage from './pages/FavoritesPage';
+import NewMeetupPage from './pages/NewMeetupPage';
+import ProfilePage from './pages/ProfilePage';
+
 function App() {
   return (
-    <div className="App">
-      <h1>hi react</h1>
-    </div>
+    <>
+      <AllMeetupsPage />
+      <NewMeetupPage />
+      <FavoritesPage />
+      <ProfilePage />
+    </>
   );
 }
 
