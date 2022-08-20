@@ -1,7 +1,7 @@
 function NewMeetupPage() {
   return (
     <section>
-      <h1>Create New Meetup</h1>
+      <h1>New Meetup</h1>
     </section>
   );
 }

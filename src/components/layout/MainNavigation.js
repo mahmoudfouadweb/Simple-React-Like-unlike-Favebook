@@ -19,7 +19,7 @@ function MainNavigation() {
             </Link>
           </li>
           <li>
-            <Link to={'my-profile'}>Profile</Link>
+            <Link to={'/my-profile'}>Profile</Link>
           </li>
         </ul>
       </nav>
