@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react';
-import MeetupList from '../components/meetups/MeetupList';
 
 const FavoritesContext = createContext({
   favorites: [],
