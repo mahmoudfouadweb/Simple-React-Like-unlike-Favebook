@@ -10,22 +10,25 @@ const FavoritesContext = createContext({
 
 export function FavoritesContextProvider() {
   const [userFavorites, setUserFavorites] = useState([]);
-  
-  function addFavoriteHandler(favoritesMeetups) => setUserFavorites(prevFavorites => {
-      prevFavorites.concat(favoritesMeetups);
-    );
+
+  function addFavoriteHandler(favoritesMeetups) {
+    setUserFavorites(prevFavorites => prevFavorites.concat(favoritesMeetups));
   }
 
   function removeFavoriteHandler(meetupId) {
-    
+    setUserFavorites(prevFavorites =>
+      prevFavorites.filter(meetup => meetupId !== meetup.id)
+    );
   }
 
-  function itemIsFavorite() {}
+  function itemIsFavorite(meetupId) {
+    userFavorites.some(meetup => meetup === meetupId);
+  }
 
   return (
     <>
       <h2>new favorites</h2>
-      <MeetupList>{userFavorites}</MeetupList>
+      {/* <MeetupList>{userFavorites}</MeetupList> */}
     </>
   );
 }
