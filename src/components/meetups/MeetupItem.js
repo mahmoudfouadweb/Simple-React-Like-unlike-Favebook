@@ -1,9 +1,13 @@
 import { useContext } from 'react';
+import FavoritesContext from '../../store/favorite-context';
 import Card from '../ui/Card';
 import classes from './MeetupItem.module.css';
 
 function MeetupItem(props) {
+  const favoritesCtx = useContext(FavoritesContext);
+  const itemFavorite = favoritesCtx.isFavorite(props.id);
   function favoriteBtnHandler() {}
+
   return (
     <li id={props.id} className={classes.item}>
       <Card>
