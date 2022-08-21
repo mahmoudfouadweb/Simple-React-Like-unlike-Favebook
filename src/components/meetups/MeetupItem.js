@@ -1,8 +1,9 @@
-import Card from '../../ui/Card';
+import { useContext } from 'react';
+import Card from '../ui/Card';
 import classes from './MeetupItem.module.css';
 
 function MeetupItem(props) {
-  console.log('meetup item', props);
+  function favoriteBtnHandler() {}
   return (
     <li id={props.id} className={classes.item}>
       <Card>
@@ -15,7 +16,7 @@ function MeetupItem(props) {
           <p>{props.description}</p>
         </div>
         <div className={classes.actions}>
-          <button>Add To Favorite</button>
+          <button onClick={favoriteBtnHandler}>add to favorites</button>
         </div>
       </Card>
     </li>

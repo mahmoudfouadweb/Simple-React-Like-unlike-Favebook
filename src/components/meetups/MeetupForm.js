@@ -1,9 +1,9 @@
 import { useRef } from 'react';
-import Card from '../../ui/Card';
+import Card from '../ui/Card';
 
 import classes from './MeetupForm.module.css';
 
-function MeetupForm() {
+function MeetupForm(props) {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const addressInputRef = useRef();
@@ -23,8 +23,7 @@ function MeetupForm() {
       address: enteredAddress,
       description: enteredDescription,
     };
-
-    console.log(Object.keys(meetupData).length);
+    props.onAddMeetup(meetupData);
   }
   return (
     <Card>
@@ -52,6 +51,9 @@ function MeetupForm() {
           />
         </div>
         <div className={classes.actions}>
+          <button type="reset" className={classes.reset}>
+            Reset
+          </button>
           <button>add meetup</button>
         </div>
       </form>
